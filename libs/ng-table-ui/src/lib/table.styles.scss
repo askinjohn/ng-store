@@ -1,0 +1,35 @@
+table {
+    table-layout: fixed;
+    text-align: left;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th:nth-last-child(1),
+td:nth-last-child(1) {
+    text-align: right;
+    border-right: none !important;
+}
+
+th:nth-last-child(1) {
+    border-radius: 0 0.5rem 0 0;
+}
+
+th:nth-child(1) {
+    border-radius: 0.5rem 0 0 0;
+}
+
+table td,
+table th {
+    border-right: 1px solid rgb(200, 200, 224);
+    padding: 10px;
+}
+
+td {
+    background-color: rgb(109, 109, 217, 0.3);
+}
+
+th {
+    background-color: rgb(109, 109, 217, 0.8);
+}
