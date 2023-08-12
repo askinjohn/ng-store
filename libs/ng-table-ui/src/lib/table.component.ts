@@ -1,14 +1,20 @@
-import { NgFor, NgIf } from '@angular/common';
+import {
+  NgFor,
+  NgIf,
+  NgSwitch,
+  NgSwitchCase,
+  NgSwitchDefault,
+} from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ng-table-ui',
   standalone: true,
   imports: [NgFor, NgIf],
-  template: `<div class="w-full bg-blue-500 p-2 text-blue-400">
+  template: `<div class="parent">
     <table>
       <thead>
-        <tr>
+        <tr class="header-row">
           <th class="theader-text" *ngFor="let header of inputData.headers">
             {{ header }}
           </th>

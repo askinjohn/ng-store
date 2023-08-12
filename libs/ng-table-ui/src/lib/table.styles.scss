@@ -6,14 +6,16 @@ table {
     border-radius: 0.5rem;
     border-spacing: 0;
     width: 100%;
-    font-family: 'Lucida Sans',
-        'Lucida Sans Regular',
-        'Lucida Grande',
-        'Lucida Sans Unicode',
-        Geneva,
-        Verdana,
-        sans-serif;
 }
+
+.parent {
+    font-family: inherit,
+}
+
+.header-row {
+    background-color: rgb(160, 160, 160);
+}
+
 
 tr th {
     border-bottom: 1px solid rgb(191, 191, 191);
@@ -23,6 +25,14 @@ tr th {
 
 .theader-text {
     font-style: bold;
+}
+
+th:nth-last-child(1) {
+    border-radius: 0 0.5rem 0 0;
+}
+
+th:first-child {
+    border-radius: 0.5rem 0 0 0;
 }
 
 th:nth-last-child(1),
@@ -41,14 +51,6 @@ td:nth-last-child(1)>.row-item {
     justify-content: end;
 }
 
-
-// th:nth-last-child(1) {
-//     border-radius: 0 0.5rem 0 0;
-// }
-
-// th:nth-child(1) {
-//     border-radius: 0.5rem 0 0 0;
-// }
 
 tr td {
     border-bottom: 1px solid rgb(220, 220, 220);
