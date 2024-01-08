@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ITableData } from '@asjohmuel';
 
 @Component({
   selector: 'my-ng-store-root',
@@ -8,13 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng-table';
 
-  data: any = {
+  data: ITableData = {
     headers: [
       'User Info',
       'Address',
       'Net Spent',
       'Total Orders',
       'Latest Activity',
+      'Settings',
     ],
     values: [
       {
@@ -75,17 +77,28 @@ export class AppComponent {
       // Add more objects as needed
     ],
     props: [
-      [
-        { header: '', key: 'name' },
-        { header: '', key: 'email' },
-      ],
-      [
-        { header: '', key: 'city' },
-        { header: '', key: 'country' },
-      ],
-      [{ header: '', key: 'totalSpent' }],
-      [{ header: '', key: 'orders' }],
-      [{ header: 'Activity:', key: 'lastPurchase' }],
+      {
+        values: [
+          {
+            title: '',
+            key: 'name',
+          },
+        ],
+      },
+      {
+        values: [
+          { title: '', key: 'city' },
+          { title: '', key: 'country' },
+        ],
+      },
+      {
+        values: [{ title: '', key: 'totalSpent' }],
+      },
+      {
+        values: [{ title: 'Activity:', key: 'lastPurchase' }],
+      },
+      { values: [{ title: '', key: 'orders' }] },
+      { values: [{ key: '', buttonText: 'Download', type: 'BUTTON' }] },
     ],
   };
 }

@@ -2,7 +2,7 @@
   "name": "ng-table-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ng-table-ui/src",
-  "prefix": "my-ng-store",
+  "prefix": "ng-store",
   "tags": [],
   "projectType": "library",
   "targets": {
@@ -10,10 +10,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/ng-table-ui/ng-package.json",
-        "tailwindConfig": "libs/ng-table-ui/tailwind.config.js",
-        "assets": [ "libs/ng-table-ui/assets"],
-        "styles": ["libs/ng-table-ui/src/styles.scss"]
+        "project": "libs/ng-table-ui/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -29,18 +26,11 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/ng-table-ui/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "libs/ng-table-ui/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [

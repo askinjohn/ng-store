@@ -8,6 +8,24 @@ table {
     width: 100%;
 }
 
+.row-button {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1.2rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.row-button:hover {
+    --transform-scale-x: 1.1;
+    --transform-scale-y: 1.1;
+}
+
 .parent {
     font-family: inherit,
 }
