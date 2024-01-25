@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-ng-store/ngx-dynamic-table": ["libs/ng-table-ui/src/index.ts"]
+      // "@my-ng-store/ngx-dynamic-table": ["libs/ng-table-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

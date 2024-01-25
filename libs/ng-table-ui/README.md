@@ -48,12 +48,12 @@ export class MyAppComponent {}
 **2. Use the component in your template:**
 
 ```html
-<ngx-dynamic-table [tableData]="myTableData"></ngx-dynamic-table>
+<ngx-dynamic-table [inputData]="myTableData"></ngx-dynamic-table>
 ```
 
 ## Input
 
-The component takes in a input [tableData] of type ITableData which can be imported from the library.
+The component takes in a input [inputData] of type ITableData which can be imported from the library.
 
 **3. Provide the table data:**
 
@@ -73,7 +73,7 @@ myTableData: ITableData = {
 - (onImageClick): Emits the value of the clicked image's key property.
 
 ```html
-<ngx-dynamic-table [tableData]="myTableData" (onButtonClick)="handleButtonClick($event)" (onImageClick)="handleImageClick($event)"></ngx-dynamic-table>
+<ngx-dynamic-table [inputData]="myTableData" (onButtonClick)="handleButtonClick($event)" (onImageClick)="handleImageClick($event)"></ngx-dynamic-table>
 ```
 
 ```typeScript
