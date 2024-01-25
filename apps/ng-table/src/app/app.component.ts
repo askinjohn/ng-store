@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITableData } from '@asjohmuel';
+import { ITableData } from '@my-ng-store/ngx-dynamic-table';
 
 @Component({
   selector: 'my-ng-store-root',
@@ -16,7 +16,7 @@ export class AppComponent {
       'Net Spent',
       'Total Orders',
       'Latest Activity',
-      'Settings',
+      'Download',
     ],
     values: [
       {
@@ -92,13 +92,17 @@ export class AppComponent {
         ],
       },
       {
-        values: [{ title: '', key: 'totalSpent' }],
+        values: [{ title: 'Spent Amount', key: 'totalSpent' }],
       },
       {
-        values: [{ title: 'Activity:', key: 'lastPurchase' }],
+        values: [{ title: 'Activity', key: 'lastPurchase' }],
       },
       { values: [{ title: '', key: 'orders' }] },
-      { values: [{ key: '', buttonText: 'Download', type: 'BUTTON' }] },
+      {
+        values: [
+          { key: '', imageSource: '/assets/download.svg', type: 'IMAGE' },
+        ],
+      },
     ],
   };
 }

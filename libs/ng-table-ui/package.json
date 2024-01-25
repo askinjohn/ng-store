@@ -1,7 +1,7 @@
 {
-  "name": "@asjohmuel/ng-table-ui",
-  "version": "0.0.1",
-  "description": "Effortlessly render tables with support for customizable headers, grouped information ",
+  "name": "@my-ng-store/ngx-dynamic-table",
+  "version": "0.0.4",
+  "description": "Create tables with flexible structures based on user-defined data",
   "publishConfig": {
     "access": "public"
   },

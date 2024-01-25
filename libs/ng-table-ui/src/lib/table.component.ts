@@ -1,10 +1,10 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'ng-store-table-ui',
+  selector: 'ngx-dynamic-table',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, NgClass],
   template: `<div class="parent">
     <table>
       <thead>
@@ -15,31 +15,29 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let value of inputData.values">
+        @for (value of inputData.values; track $index) {
+        <tr>
           <td class="tval-text" *ngFor="let prop of inputData.props">
             <ng-container *ngFor="let p of prop.values">
               @switch (p['type']) { @case ('IMAGE') {
-              <div>
-                <img src="" alt="" />
+              <div class="row-image" [ngClass]>
+                <img
+                  (click)="onImageClick(value)"
+                  [src]="p['imageSource']"
+                  alt=""
+                />
               </div>
               } @case ('BUTTON') {
               <div class="row-item">
-                <button (click)="onButtonClick(value)" class="row-button">
+                <button (click)="onButtonClick(value)" class="row-button ">
                   {{ p['buttonText'] }}
                 </button>
               </div>
-              } @case ('DOWNLOAD') {
-              <div>
-                <button></button>
-              </div>
-              } @case ('COPY') {
-              <div>
-                <button></button>
-              </div>
-              }@default {
+              } @default {
               <span class="row-item ">
                 <p *ngIf="value[p['key']]" class="row-header">
-                  {{ p['title'] }}
+                  @if (p['title']) {
+                  {{ p['title'] }}: }
                 </p>
                 <p class="row-value">{{ value[p['key']] }}</p>
               </span>
@@ -47,6 +45,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
             </ng-container>
           </td>
         </tr>
+        }
       </tbody>
     </table>
   </div>`,
@@ -65,14 +64,6 @@ export class TableComponent {
 
   onImageClick(value: Record<string, string | boolean | number>) {
     this.imageClick.emit(value);
-  }
-
-  onCopy(value: Record<string, string | boolean | number>) {
-    this.copiedValue.emit(value);
-  }
-
-  onDownloadClick(url: string) {
-    window.open(url);
   }
 }
 
@@ -97,8 +88,9 @@ export interface ITableConfig {
 export interface ITableValues {
   title?: string;
   key: string;
-  type?: 'IMAGE' | 'BUTTON' | 'DOWNLOAD' | 'COPY';
+  type?: 'IMAGE' | 'BUTTON';
   allowClick?: boolean;
   buttonText?: string;
   supportingData?: string;
+  imageSource?: string;
 }

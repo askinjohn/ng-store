@@ -2,10 +2,13 @@ table {
     table-layout: fixed;
     text-align: left;
     border: 1px solid rgb(192, 189, 189);
-    box-shadow: 2px 2px rgb(192, 189, 189);
     border-radius: 0.5rem;
     border-spacing: 0;
     width: 100%;
+}
+
+button {
+    cursor: pointer;
 }
 
 .row-button {
@@ -62,6 +65,12 @@ td:nth-last-child(1) {
 .row-item {
     display: flex;
     flex-direction: row;
+    gap: 2px;
+}
+
+.row-image img:hover {
+    scale: 1.2;
+    cursor: pointer;
 }
 
 

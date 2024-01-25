@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ng-store",
+            "prefix": "",
             "style": "kebab-case"
           }
         ]

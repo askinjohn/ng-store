@@ -2,7 +2,7 @@
   "name": "ng-table-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ng-table-ui/src",
-  "prefix": "ng-store",
+  "prefix": "",
   "tags": [],
   "projectType": "library",
   "targets": {
